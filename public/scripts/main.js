@@ -1,8 +1,22 @@
+var Comment = React.createClass({displayName: "Comment",
+  render: function() {
+    return (
+      React.createElement("div", {className: "comment"}, 
+        React.createElement("h2", {className: "commentAuthor"}, 
+          this.props.author
+        ), 
+        this.props.children
+      )
+    )
+  }
+});
+
 var CommentList = React.createClass({displayName: "CommentList",
   render: function() {
     return (
       React.createElement("div", {className: "commentList"}, 
-        "Hello, world! I am a comment list."
+        React.createElement(Comment, {author: "nownabe1"}, "This is one comment."), 
+        React.createElement(Comment, {author: "nownabe2"}, "This is *author* comment.")
       )
     );
   }

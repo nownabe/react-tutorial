@@ -1,8 +1,30 @@
+var CommentList = React.createClass({displayName: "CommentList",
+  render: function() {
+    return (
+      React.createElement("div", {className: "commentList"}, 
+        "Hello, world! I am a comment list."
+      )
+    );
+  }
+});
+
+var CommentForm = React.createClass({displayName: "CommentForm",
+  render: function() {
+    return (
+      React.createElement("div", {className: "commentForm"}, 
+        "Hello, world! I am a comment form."
+      )
+    )
+  }
+});
+
 var CommentBox = React.createClass({displayName: "CommentBox",
   render: function() {
     return(
       React.createElement("div", {className: "commentBox"}, 
-        "Hello, world! I am a CommentBox."
+        React.createElement("h1", null, "Comments"), 
+        React.createElement(CommentList, null), 
+        React.createElement(CommentForm, null)
       )
     );
   }
